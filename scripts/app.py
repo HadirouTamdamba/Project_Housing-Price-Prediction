@@ -5,11 +5,11 @@ import numpy as np
 app = Flask(__name__)
 
 # Charger le modèle
-model = joblib.load("models/best_housing_price_model.pkl") 
+model = joblib.load("models/best_housing_price_model.pkl")
 
-@app.route("/", methods=["POST"])
+@app.route("/", methods=["GET"])
 def home():
-    return "Welcome to the Housing Price Prediction API! Use /predict to get predictions."
+    return "Welcome to the Housing Price Prediction API. Use /predict to make predictions."
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -19,7 +19,7 @@ def predict():
         prediction = model.predict(features)
         return jsonify({"prediction": prediction[0]})
     except Exception as e:
-        return jsonify({"error": str(e)}), 400  
+        return jsonify({"error": str(e)}), 400
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0") 
+    app.run(host="0.0.0.0", port=80)
