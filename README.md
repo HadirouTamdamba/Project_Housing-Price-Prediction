@@ -31,7 +31,7 @@ Comparison of several models:
 The best model is selected based on **MSE** (Mean Squared Error).
 
 ## Deployment
-A Flask API is created to predict housing prices in real-time.
+A Microsoft AureWebSites is created to predict housing prices in real-time.
 
 ## Conclusion
-The **XGBoost** model achieved the best performance with an MSE of 2 238 153 643.45
+The **XGBoost** model achieved the best performance with an MSE of 2, 238, 153, 643.45
